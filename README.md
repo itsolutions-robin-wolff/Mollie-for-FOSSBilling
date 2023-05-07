@@ -34,4 +34,5 @@ We only offer support for the module via [E-Mail](mailto:info@it-rwo.eu), [Ticke
 
 ### Support for Mollie
 Our company is an official Mollie partner. We are happy to offer support on request, but we can usually only help to a limited extent or establish contact with the relevant specialist department more quickly.
+If you want to contact us, you can contact us via [E-Mail](mailto:info@it-rwo.eu), [TicketSystem](https://support.itsolutions-rwo.de) or [Discord](https://discord.gg/wpAw2rN7vq).<br>
 Alternatively, you can contact [Mollie support](https://www.mollie.com/en/contact/merchants) directly.
