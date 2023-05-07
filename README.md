@@ -26,3 +26,12 @@ In order to get the Mollie API keys, you need to register with Mollie. If you al
 3. Mollie will now check your data. This can take some time.
 4. Now you can see the API keys in your Mollie dashboard under 'Developer->API Keys'. Please make sure to use the right ones, you have to enter them in the administration of your FOSSBilling instance
    (System->Payment Gateways->Mollie)
+
+## Support
+
+### Support for the Module
+We only offer support for the module via [E-Mail](mailto:info@it-rwo.eu) and via [TicketSystem](https://support.itsolutions-rwo.de).
+
+### Support for Mollie
+Our company is an official Mollie partner. We are happy to offer support on request, but we can usually only help to a limited extent or establish contact with the relevant specialist department more quickly.
+Alternatively, you can contact [Mollie support](https://www.mollie.com/en/contact/merchants) directly.
