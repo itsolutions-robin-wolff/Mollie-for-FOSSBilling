@@ -30,7 +30,7 @@ In order to get the Mollie API keys, you need to register with Mollie. If you al
 ## Support
 
 ### Support for the Module
-We only offer support for the module via [E-Mail](mailto:info@it-rwo.eu) and via [TicketSystem](https://support.itsolutions-rwo.de).
+We only offer support for the module via [E-Mail](mailto:info@it-rwo.eu), [TicketSystem](https://support.itsolutions-rwo.de) and [Discord](https://discord.gg/wpAw2rN7vq).
 
 ### Support for Mollie
 Our company is an official Mollie partner. We are happy to offer support on request, but we can usually only help to a limited extent or establish contact with the relevant specialist department more quickly.
