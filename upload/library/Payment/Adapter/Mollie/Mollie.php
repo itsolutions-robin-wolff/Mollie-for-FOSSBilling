@@ -1,11 +1,10 @@
 <?php
-class Payment_Adapter_Mollie implements \Box\InjectionAwareInterface
+class Payment_Adapter_Mollie extends Payment_AdapterAbstract implements \Box\InjectionAwareInterface
 {
 
     private $config = array();
 
     protected $di;
-
     public function setDi($di)
     {
         $this->di = $di;
@@ -74,31 +73,37 @@ class Payment_Adapter_Mollie implements \Box\InjectionAwareInterface
 
     public function send_request($url, $data, $post = 1)
     {
-        $post_fields = json_encode($data);
-
         if($this->config['test_mode'] == '0') {
             $token = $this->config['live_api_key'];
         } else {
             $token = $this->config['test_api_key'];
         }
 
-        $request_headers = array();
-        $request_headers[] = 'Content-Type: application/json';
-        $request_headers[] = 'Authorization: Bearer '.$token;
+        $client = $this->getHttpClient()->withOptions([
+            'verify_peer'   => false,
+            'verify_host'   => false,
+            'timeout'       => 600
+        ]);
 
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, $request_headers);
-        if ($post) {
-            curl_setopt($ch, CURLOPT_POST, $post);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $post_fields);
+        if($post == 1){
+            $response = $client->request('POST', $url, [
+                'headers' => [
+                    'Accept' => 'application/json',
+                    'Content-Type' => 'application/json',
+                    'Authorization' => 'Bearer '.$token
+                ],
+                'body' => json_encode($data)
+            ]);
+        } else {
+            $response = $client->request('GET', $url, [
+                'headers' => [
+                    'Accept' => 'application/json',
+                    'Content-Type' => 'application/json',
+                    'Authorization' => 'Bearer '.$token
+                ]
+            ]);
         }
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        $result = curl_exec($ch);
-
-        curl_close($ch);
-
-        return json_decode($result);
+        return json_decode($response->getContent());
     }
 
     public function processTransaction($api_admin, $id, $data, $gateway_id)
