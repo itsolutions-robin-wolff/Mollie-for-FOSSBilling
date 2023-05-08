@@ -10,7 +10,7 @@ Mollie offers many different payment providers. Starting with credit cards, SEPA
 
 ## Setup
 
-1. Download the latest Release of the Module
+1. Download the latest Release of the Module [here](https://github.com/itsolutions-robin-wolff/Mollie-for-FOSSBilling/releases/latest)
 2. Unzip the download
 3. Upload the entire contents of the `upload` folder to the rootdirectory of your FOSSBilling instance
 4. Go to the admin area of your FOSSBilling instance
